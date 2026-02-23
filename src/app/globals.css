@@ -1,26 +1,114 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-jakarta), system-ui, sans-serif;
+  --color-bg: #F8F7F4;
+  --color-surface: #FFFFFF;
+  --color-text: #1A1A1A;
+  --color-text-muted: #6B6B6B;
+  --color-accent: #1A1A1A;
+  --color-green: #2D7A4F;
+  --color-border: #E8E8E5;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #F8F7F4;
+  color: #1A1A1A;
+  font-family: var(--font-sans);
 }
+
+/* ── Accent text ───────────────────────────────── */
+.text-accent {
+  color: #2D7A4F;
+}
+
+/* ── Cards ─────────────────────────────────────── */
+.card {
+  background: #FFFFFF;
+  border: 1px solid #E8E8E5;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: #D0D0CC;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+
+/* ── Primary button ────────────────────────────── */
+.btn-primary {
+  background: #1A1A1A;
+  color: #FFFFFF;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #333333;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ── Secondary button ──────────────────────────── */
+.btn-secondary {
+  background: transparent;
+  color: #1A1A1A;
+  border: 1.5px solid #D0D0CC;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  border-color: #1A1A1A;
+  background: #FFFFFF;
+}
+
+/* ── Badge ─────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #EEF9F0;
+  color: #2D7A4F;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.375rem 1rem;
+  border-radius: 999px;
+}
+
+/* ── Chat bubble ───────────────────────────────── */
+.chat-bubble-bot {
+  background: #F0F0EC;
+  border-radius: 1.25rem 1.25rem 1.25rem 0.25rem;
+}
+
+.chat-bubble-user {
+  background: #1A1A1A;
+  color: #FFFFFF;
+  border-radius: 1.25rem 1.25rem 0.25rem 1.25rem;
+}
+
+/* ── Section divider ───────────────────────────── */
+.section-light { background: #F8F7F4; }
+.section-white { background: #FFFFFF; }
+
+/* ── Stat pill ─────────────────────────────────── */
+.stat-pill {
+  background: #FFFFFF;
+  border: 1px solid #E8E8E5;
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  text-align: center;
+}
+
+/* ── Scrollbar ─────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #F8F7F4; }
+::-webkit-scrollbar-thumb { background: #D0D0CC; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #ABABAB; }
